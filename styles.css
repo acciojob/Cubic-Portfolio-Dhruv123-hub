@@ -1,2 +1,45 @@
+/* Apply CSS to the scene */
+.scene-1 {
+  width: 200px;
+  height: 200px;
+  perspective: 800px;
+}
 
-/* Your CSS Code here. */
+/* Apply CSS to the cube */
+.cube-1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 10s infinite linear;
+}
+
+/* Create a keyframe for cube rotation */
+@keyframes rotateCube {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Apply CSS to each face */
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  border: 1px solid #000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(50px);
+}
+
+.front { transform: rotateY(0deg) translateZ(50px); }
+.back { transform: rotateY(180deg) translateZ(50px); }
+.left { transform: rotateY(-90deg) translateZ(50px); }
+.right { transform: rotateY(90deg
